@@ -16,14 +16,17 @@ const Header  = (props) => {
             <div className="max-container">
                 <div className="header">
                     <header>
+                        <div className="hublink" dangerouslySetInnerHTML={{__html:data.hubTitle}}></div>
                         <h1>{data.headline}</h1>
-                        <div dangerouslySetInnerHTML={{__html:data.standfirst}}></div>
+                        <div className="intro" dangerouslySetInnerHTML={{__html:data.standfirst}}></div>
                         <div dangerouslySetInnerHTML={{__html:data.intro}}></div>
                     </header>
                     <div className='client'>
                         <p>Paid for by</p>
-                        <a href={data.logoLink} target="_blank" title="Dairy Australia"><img src="<%= path %>/brand_logo.svg" width="120" alt="" /></a>
+                        <a href={data.logoLink} target="_blank" title="Griffith University"><img src="<%= path %>/brand_logo.svg" width="120" alt="" /></a>
+
                         <SocialBar url={shareUrl} title={data.shareTitle} />
+                        <div className="about-content" dangerouslySetInnerHTML={{__html:data.aboutLink}}><a href="#" target="_blank">About this content</a></div>
                     </div>
             </div>
             <div className="hr"></div>

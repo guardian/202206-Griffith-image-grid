@@ -24,6 +24,7 @@ figure.element {
     a {
         color: white;
     }
+
 }
 .clearfix {
     &::after {
@@ -73,6 +74,8 @@ figure.element {
 .client {
     display: inline-block;
     margin-top: 2rem;
+    padding-top: 0.6rem;
+
     @include mq(tablet) {
         margin-top: 0;
     }
@@ -93,6 +96,13 @@ figure.element {
             margin: 4px;
         }
     }
+
+    .about-content a {
+        font-size: 0.75rem;
+        font-weight: normal;
+    }
+
+
 }
 
 .audio-player {
@@ -116,23 +126,49 @@ figure.element {
 }
 
 .hero {
-    background-size: cover;
-    height: 60vh;
-    background-position: 29% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40vh;
+    background-position: 50%;
+    background-color: #7A0000;
     @include mq(tablet) {
-        background-position: 50%;
-        height: 70vh;
+        height: 50vh;
+    }
+    @include mq(desktop) {
+        height: 90vh;
     }
 }
+
+
 .header {
     padding: 2rem;
+
+    .hublink {
+        a {
+            background: white;
+            color: #000 !important;
+            padding: 0.1rem 0.6rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .intro {
+        p:first-child {
+            font-size: 120%;
+            line-height: 120%;
+        }
+    }
+
     @include mq(tablet) {
         display: flex;
         header {
 
             margin-right: 5rem;
+
         }
     }
+
 }
 
 h2 {
@@ -263,15 +299,17 @@ h2 {
                     height: 100%;
                     padding: 1rem;
                 }
-                div:nth-child(1) {
+                >div:nth-child(1) {
                     display: flex;
                     align-items: center;
                 }
-                div:nth-child(2) {
+                >div:nth-child(2) {
                     display: flex;
                     // padding: 1rem;
                     align-items: flex-end;
-                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 50%;
                 }
             }
             &.imageLeft a {
@@ -283,16 +321,18 @@ h2 {
                     height: 100%;
                     padding: 1rem;
                 }
-                div:nth-child(2) {
+                >div:nth-child(2) {
                     display: flex;
                     align-items: center;
                 }
 
-                div:nth-child(1) {
+                >div:nth-child(1) {
                     display: flex;
                     // padding: 1rem;
                     align-items: flex-end;
-                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 50%;
                 }
             }
         }
